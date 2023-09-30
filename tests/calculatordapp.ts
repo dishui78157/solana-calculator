@@ -1,6 +1,5 @@
-const assert = require('assert');
 import * as anchor from '@project-serum/anchor';
-//import * as anchor from "@coral-xyz/anchor";
+import * as assert from 'assert';
 const { SystemProgram } = anchor.web3;
 
 
