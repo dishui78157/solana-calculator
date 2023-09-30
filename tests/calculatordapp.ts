@@ -7,14 +7,10 @@ import { Program } from "@coral-xyz/anchor";
 import { Calculatordapp } from "../target/types/calculatordapp";
 
 describe('calculatordapp', () => {
-   // const provider = anchor.AnchorProvider.local();
-    //anchor.setProvider(provider);
     const provider = anchor.AnchorProvider.env();
     anchor.setProvider(provider);
-   // anchor.setProvider(anchor.AnchorProvider.env());
     const calculator = anchor.web3.Keypair.generate();
-   // const program = anchor.workspace.Calculatordapp;
-    const program = anchor.workspace.Calculatordapp;
+    const program = (anchor as any).workspace.Calculatordapp as Program<Calculatordapp>;
 
     it('Create a calculator', async()=> {
         await program.methods.create("Calculator initialized")
